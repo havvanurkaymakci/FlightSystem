@@ -1,21 +1,124 @@
-﻿@{
+﻿@model FlightSystem.Models.Flight;
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/ındex.css">
+<link rel="stylesheet" href="styles.css">
 
-<h2>@ViewBag.Title</h2>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/css2/bootstrap.min.css">
+<link rel="stylesheet" href="css/css2/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/css2/fontAwesome.css">
+<link rel="stylesheet" href="css/css2/hero-slider.css">
+<link rel="stylesheet" href="css/css2/owl-carousel.css">
+<link rel="stylesheet" href="css/css2/datepicker.css">
+<link rel="stylesheet" href="css/css2/tooplate-style.css">
 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-<div class="image-container">
-    <!-- Resim eklemek için img etiketini kullanabilirsiniz. -->
-    <img src="~/img/kapadokya.jpg" alt="anasayfa" />
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-    <!-- Üzerine eklenen div -->
-    <div class="overlay-div">
-        <p>Bu div resmin üzerine eklenmiştir.</p>
+<div></div>
+<br />
+<div class="container2">
+    <div class="box">
+        <p class="styled-text ">Bilet al</p>
+    </div>
+    <div class="box">
+        <p class="styled-text ">Bilet iptal</p>
+    </div>
+    <div class="box">
+        <p class="styled-text ">check-in</p>
+    </div>
+    <div class="box">
+        <p class="styled-text ">uçuş sorgula</p>
     </div>
 </div>
+
+<br />
+
+@* <div class="styled-text">
+    <h4>En uygun uçak biletini bul</h4>
+</div> *@
+
+<div class="imagee-container">
+    <img class="image" src="img/kapadokya.jpg" alt="Resim 1">
+    <img class="image" src="img/newyork.jpg" alt="Resim 2">
+    <img class="image" src="img/Hallstatt.jpg" alt="Resim 3">
+</div>
+<div class="imagee-container">
+    <img class="image" src="img/bogazici.jpg" alt="Resim 4">
+    <img class="image" src="img/Aurora2.jpg" alt="Resim 5">
+    <img class="image" src="img/iran.jpeg" alt="Resim 6">
+</div>
+
+    <!-- Resim eklemek için img etiketini kullanabilirsiniz. -->
+    @* <img id="resim" src="~/img/newyork.jpg" alt="anasayfa" /> *@
+
+<section class="banner" id="top">
+    <div class="container">
+        <div class="row">             
+            <section id="first-tab-group" class="tabgroup">
+                 <div id="tab1">
+                      <div class="submit-form">
+                          <h4> Uçak bileti ara</h4>
+                            <form id="form-submit" action="" method="get">
+                                <div class="container2">
+                                     <div class="row">
+                                        <div class="col-md-2 ">
+                                            <fieldset>                                       
+                                            <label asp-for="FlightDeparture" class="control-label">   Nereden:</label>
+                                            <input asp-for="FlightDeparture" class="form-control" />
+                                            <span asp-validation-for="FlightDeparture" class="text-danger"></span>
+                                        
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-2 ">
+                                            <fieldset>
+                                            <label asp-for="FlightDestination" class="control-label">   Nereye:</label>
+                                            <input asp-for="FlightDestination" class="form-control" />
+                                            <span asp-validation-for="FlightDestination" class="text-danger"></span>
+                                        </fieldset>
+                                        </div>
+                                        <div class="col-md-2 ">
+                                            <fieldset>
+                                            <label asp-for="FlightDepartureDate" class="control-label"> gidiş tarihi:</label>
+                                            <input asp-for="FlightDepartureDate" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-2 ">
+                                            <fieldset>
+                                            <label asp-for="FlightDestinationDate" class="control-label"> dönüş tarihi:</label>
+                                            <input asp-for="FlightDestinationDate" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+
+                                           <div class="col-md-2 ">
+                                                <fieldset>
+                                                  <button type="submit" id="form-submit" class="btn">Bilet bul</button>           
+                                                </fieldset>
+                                            </div>
+                                           
+                                                                                                               
+                                   </div>
+                              </div>                           
+                          </form>
+                      </div>
+                   </div>
+                   
+                </section>               
+         </div>
+    </div>
+
+</section>
+
+
+<div class="bosluk"></div>
+
+
 
 
 
