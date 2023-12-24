@@ -2,20 +2,157 @@
     ViewData["Title"] = "Home Page";
 }
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/css/ındex.css">
+<link rel="stylesheet" href="styles.css">
 
-<h2>@ViewBag.Title</h2>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="css/css2/bootstrap.min.css">
+<link rel="stylesheet" href="css/css2/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/css2/fontAwesome.css">
+<link rel="stylesheet" href="css/css2/hero-slider.css">
+<link rel="stylesheet" href="css/css2/owl-carousel.css">
+<link rel="stylesheet" href="css/css2/datepicker.css">
+<link rel="stylesheet" href="css/css2/tooplate-style.css">
 
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-<div class="image-container">
-    <!-- Resim eklemek için img etiketini kullanabilirsiniz. -->
-    <img src="~/img/kapadokya.jpg" alt="anasayfa" />
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
-    <!-- Üzerine eklenen div -->
-    <div class="overlay-div">
-        <p>Bu div resmin üzerine eklenmiştir.</p>
+<div></div>
+<br />
+<div class="container2">
+    <div class="box">
+        <p class="styled-text ">Bilet al</p>
+    </div>
+    <div class="box">
+        <p class="styled-text ">Bilet iptal</p>
+    </div>
+    <div class="box">
+        <p class="styled-text ">check-in</p>
+    </div>
+    <div class="box">
+        <p class="styled-text ">uçuş sorgula</p>
     </div>
 </div>
+
+<br />
+
+@* <div class="styled-text">
+    <h4>En uygun uçak biletini bul</h4>
+</div> *@
+
+<div class="imagee-container">
+    <img class="image" src="img/kapadokya.jpg" alt="Resim 1">
+    <img class="image" src="img/newyork.jpg" alt="Resim 2">
+    <img class="image" src="img/Hallstatt.jpg" alt="Resim 3">
+</div>
+<div class="imagee-container">
+    <img class="image" src="img/bogazici.jpg" alt="Resim 1">
+    <img class="image" src="img/Aurora2.jpg" alt="Resim 2">
+    <img class="image" src="img/venice2.jpg" alt="Resim 3">
+</div>
+
+    <!-- Resim eklemek için img etiketini kullanabilirsiniz. -->
+    @* <img id="resim" src="~/img/newyork.jpg" alt="anasayfa" /> *@
+
+    <section class="banner" id="top">
+        <div class="container">
+            <div class="row">
+               @*  <div class="col-md-5">
+                    <div class="left-side">
+                        <div class="logo">
+                            <img src="img/logo.png" alt="Flight Template">
+                        </div>
+                        
+                    </div>
+                </div> *@
+                <div class="col-md-5 col-md-offset-1">
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <div class="submit-form">
+                                <h4>Check availability for <em>direction</em>:</h4>
+                                <form id="form-submit" action="" method="get">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="from">From:</label>
+                                                <select required name='from' onchange='this.form.()'>
+                                                    <option value="">Select a location...</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Hong Kong">Hong Kong</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Korea">Korea</option>
+                                                    <option value="Laos">Laos</option>
+                                                    <option value="Myanmar">Myanmar</option>
+                                                    <option value="Singapore">Singapore</option>
+                                                    <option value="Thailand">Thailand</option>
+                                                    <option value="Vietnam">Vietnam</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="to">To:</label>
+                                                <select required name='to' onchange='this.form.()'>
+                                                    <option value="">Select a location...</option>
+                                                    <option value="Cambodia">Cambodia</option>
+                                                    <option value="Hong Kong">Hong Kong</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="Korea">Korea</option>
+                                                    <option value="Laos">Laos</option>
+                                                    <option value="Myanmar">Myanmar</option>
+                                                    <option value="Singapore">Singapore</option>
+                                                    <option value="Thailand">Thailand</option>
+                                                    <option value="Vietnam">Vietnam</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="departure">Departure date:</label>
+                                                <input name="deparure" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <label for="return">Return date:</label>
+                                                <input name="return" type="text" class="form-control date" id="return" placeholder="Select date..." required="" onchange='this.form.()'>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="radio-select">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <label for="round">Round</label>
+                                                        <input type="radio" name="trip" id="round" value="round" required="required" onchange='this.form.()'>
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                                        <label for="oneway">Oneway</label>
+                                                        <input type="radio" name="trip" id="oneway" value="one-way" required="required" onchange='this.form.()'>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <button type="submit" id="form-submit" class="btn">Order Ticket Now</button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
 
 
