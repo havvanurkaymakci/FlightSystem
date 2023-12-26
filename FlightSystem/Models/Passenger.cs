@@ -48,6 +48,8 @@ namespace FlightSystem.Models
         [Phone(ErrorMessage = "Lütfen geçerli bir telefon numarası giriniz")]
         [Required(ErrorMessage = "Telefon numarası alanı zorunludur.")]
         public string UserPhone { get; set; }
+
+        public string TicketType { get; set; }
     }
 }
 
