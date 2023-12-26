@@ -30,10 +30,10 @@ namespace FlightSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FlightId"), 1L, 1);
 
-                    b.Property<double>("BusinessClassPrice")
+                    b.Property<double>("BusinessClass")
                         .HasColumnType("float");
 
-                    b.Property<double>("EconomyClassPrice")
+                    b.Property<double>("EconomyClass")
                         .HasColumnType("float");
 
                     b.Property<string>("FlightDeparture")
@@ -57,15 +57,13 @@ namespace FlightSystem.Data.Migrations
                         .HasColumnType("time");
 
                     b.Property<int>("FlightNum")
-                        .HasMaxLength(6)
                         .HasColumnType("int");
 
-                    b.Property<int>("PassengerCapacity")
+                    b.Property<int>("PassengerNum")
                         .HasColumnType("int");
 
-                    b.Property<string>("airlineBusiness")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("SeatNum")
+                        .HasColumnType("float");
 
                     b.HasKey("FlightId");
 
@@ -103,10 +101,6 @@ namespace FlightSystem.Data.Migrations
                     b.Property<int>("TicketNum")
                         .HasColumnType("int");
 
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("UserMail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -141,9 +135,8 @@ namespace FlightSystem.Data.Migrations
                     b.Property<int>("CardId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("CardType")
+                        .HasColumnType("bit");
 
                     b.Property<int>("TotalAmount")
                         .HasColumnType("int");
@@ -169,10 +162,6 @@ namespace FlightSystem.Data.Migrations
 
                     b.Property<int>("TicketNum")
                         .HasColumnType("int");
-
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TicketId");
 

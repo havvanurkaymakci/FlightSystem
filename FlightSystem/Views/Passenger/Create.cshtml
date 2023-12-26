@@ -86,29 +86,10 @@
                 </div>
 
             </div>
-            <hr />
-
-            <div class="form-group" asp-action="ReceiveData">
-                <label>uçuş türü seçiniz</label>
-                <br />
-                <label>
-                    <input type="radio" asp-for="TicketType" name="TicketType" value="economy"> Ekonomi
-                </label>
-                <label>
-                    <input type="radio" asp-for="TicketType" name="TicketType" value="bussiness"> Business
-                </label>
-                <span asp-validation-for="TicketType" class="text-danger"></span>
-            </div>
             <br />
-
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
-               
                 <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Anasayfa</a>
-            </div>
-            <br />
-            <div>
-                <a class="btn btn-info" asp-controller="Payment" asp-action="Create">Ödeme işlemine geç</a>
             </div>
             
         </form>
@@ -118,7 +99,9 @@
 </div>
 
 <br />
-
+<div>
+    <a asp-action="Index" class="btn-link">Anasayfaya dön</a>
+</div>
 <br />
 <div class="bosluk"></div>
 

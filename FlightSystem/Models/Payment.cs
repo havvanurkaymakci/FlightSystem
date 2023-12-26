@@ -6,14 +6,11 @@ namespace FlightSystem.Models
     {
         [Key]
         public int PaymentId { get; set; }
-        public int TotalAmount { get; set; }
         public int CardId { get; set; }
-       
-
-        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:/MM/yyyy}")]
-        [Required(ErrorMessage = "Lütfen geçerli bir tarih seçiniz.")]
+        public int TotalAmount { get; set; }
+        public bool CardType { get; set; }
         public DateTime CardDate { get; set; }
-        public int CVV { get; set; }
-        public string TicketType { get; set; }
+        public int CVV { get; set; } 
+
     }
 }
