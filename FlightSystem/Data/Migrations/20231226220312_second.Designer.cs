@@ -4,6 +4,7 @@ using FlightSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FlightSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231226220312_second")]
+    partial class second
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,10 +32,10 @@ namespace FlightSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FlightId"), 1L, 1);
 
-                    b.Property<double>("BusinessClassPrice")
+                    b.Property<double>("BusinessClass")
                         .HasColumnType("float");
 
-                    b.Property<double>("EconomyClassPrice")
+                    b.Property<double>("EconomyClass")
                         .HasColumnType("float");
 
                     b.Property<string>("FlightDeparture")
@@ -57,15 +59,10 @@ namespace FlightSystem.Data.Migrations
                         .HasColumnType("time");
 
                     b.Property<int>("FlightNum")
-                        .HasMaxLength(6)
                         .HasColumnType("int");
 
                     b.Property<int>("PassengerCapacity")
                         .HasColumnType("int");
-
-                    b.Property<string>("airlineBusiness")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("FlightId");
 
@@ -103,10 +100,6 @@ namespace FlightSystem.Data.Migrations
                     b.Property<int>("TicketNum")
                         .HasColumnType("int");
 
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("UserMail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -141,10 +134,6 @@ namespace FlightSystem.Data.Migrations
                     b.Property<int>("CardId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("TotalAmount")
                         .HasColumnType("int");
 
@@ -169,10 +158,6 @@ namespace FlightSystem.Data.Migrations
 
                     b.Property<int>("TicketNum")
                         .HasColumnType("int");
-
-                    b.Property<string>("TicketType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TicketId");
 
