@@ -7,7 +7,7 @@ namespace FlightSystem.Models
         [Key]
         public int FlightId { get; set; }
         public int FlightNum { get; set; } //ucus numarası
-        public int PassengerNum { get; set; }
+        public int PassengerNum { get; set; } // yolcu sayısı
         public string FlightDestination { get; set; }
         public string FlightDeparture { get; set; }
         public DateTime FlightDepartureDate { get; set; }

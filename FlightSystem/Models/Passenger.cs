@@ -28,7 +28,7 @@ namespace FlightSystem.Models
         public string passengerGender { get; set; }
 
 
-        public string passengerNum { get; set; }
+        // public string passengerNum { get; set; }
 
         [StringLength(11, ErrorMessage = "Lütfen geçerli bir numara giriniz ")]
         [Required(ErrorMessage = " Kimlik numarası alanı zorunludur.")]

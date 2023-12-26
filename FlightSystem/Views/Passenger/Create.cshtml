@@ -1,0 +1,126 @@
+﻿@model FlightSystem.Models.Passenger
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+
+<h4>Yolcu bilgileri</h4>
+<hr />
+<div class="row ">
+    <div class="col-md-4 " >
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          @*   <div class="form-group">
+                <label asp-for="TicketNum" class="control-label"></label>
+                <input asp-for="TicketNum" class="form-control" />
+                <span asp-validation-for="TicketNum" class="text-danger"></span>
+            </div> *@
+                     
+            <div class="form-group">
+                <label asp-for="PassengerName" class="control-label">Yolcu adı:</label>
+                <input asp-for="PassengerName" class="form-control" />
+                <span asp-validation-for="PassengerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerSurname" class="control-label">Yolcu soyadı:</label>
+                <input asp-for="PassengerSurname" class="form-control" />
+                <span asp-validation-for="PassengerSurname" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label>
+                    <input type="radio" asp-for="passengerGender" name="passengerGender" value="erkek"> Erkek
+                </label>
+                <label>
+                    <input type="radio" asp-for="passengerGender" name="passengerGender" value="kadın"> Kadın
+                </label>
+                <span asp-validation-for="passengerGender" class="text-danger"></span>
+            </div>
+            <br />
+            
+
+            <div class="form-group">
+                <label asp-for="Birthday" class="control-label">Doğum tarihi:</label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+
+            <label>
+                <input type="radio" name="nationality" value="turkish" onchange="nationalityChanged()"> Türk Vatandaşı
+            </label>
+            <label>
+                <input type="radio" name="nationality" value="foreigner" onchange="nationalityChanged()"> Yabancı
+            </label>
+
+            <div class="form-group" id="tcDiv" style="display: none;">
+                <label asp-for="TCNumber" class="control-label">Tc kimlik numarası:</label>
+                <input asp-for="TCNumber" class="form-control" />
+                <span asp-validation-for="TCNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group" id="passportDiv" style="display: none;">
+                <label asp-for="PassportNum" class="control-label">Pasaport numarası</label>
+                <input asp-for="PassportNum" class="form-control" />
+                <span asp-validation-for="PassportNum" class="text-danger"></span>
+            </div>
+           <br />
+           <br />
+           
+            <h5>İletişim bilgileri</h5>
+            <hr />
+            <div>
+                <div class="form-group">
+                    <label asp-for="UserMail" class="control-label">Mail adresi</label>
+                    <input asp-for="UserMail" class="form-control" />
+                    <span asp-validation-for="UserMail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserPhone" class="control-label">Telefon numarası:</label>
+                    <input asp-for="UserPhone" class="form-control" />
+                    <span asp-validation-for="UserPhone" class="text-danger"></span>
+                </div>
+
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Anasayfa</a>
+            </div>
+            
+        </form>
+       
+    </div>
+    <h5 style="color:blue;">@TempData["onayMesaji"]</h5>
+</div>
+
+<br />
+<div>
+    <a asp-action="Index" class="btn-link">Anasayfaya dön</a>
+</div>
+<br />
+<div class="bosluk"></div>
+
+<script>
+    function nationalityChanged() {
+        var selectedNationality = document.querySelector('input[name="nationality"]:checked').value;
+        var tcDiv = document.getElementById('tcDiv');
+        var passportDiv = document.getElementById('passportDiv');
+
+        if (selectedNationality === 'turkish') {
+            tcDiv.style.display = 'block';
+            passportDiv.style.display = 'none';
+        } else {
+            tcDiv.style.display = 'none';
+            passportDiv.style.display = 'block';
+        }
+    }
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

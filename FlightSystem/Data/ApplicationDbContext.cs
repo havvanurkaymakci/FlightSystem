@@ -7,6 +7,9 @@ namespace FlightSystem.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Flight> Flights { get; set; }
+        public DbSet<Passenger> Passengers { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<Payment> Payment { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
