@@ -65,6 +65,29 @@
     font-weight:bold;
 }
 
+.box {
+    flex: 1; /* Eşit genişlik */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: antiquewhite;
+}
+
+.box2 {
+    flex: 1; /* Eşit genişlik */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color:beige;
+}
+
+.styled-text {
+    font-size: 20px;
+    color:darkslategrey;
+    padding: 10px;
+    font-weight:bold;
+}
+
 .image-container {
     position: relative;
     display: inline-block;
