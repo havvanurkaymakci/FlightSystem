@@ -14,6 +14,9 @@ namespace FlightSystem.Models
         [Required(ErrorMessage = "Lütfen geçerli bir tarih seçiniz.")]
         public DateTime CardDate { get; set; }
         public int CVV { get; set; }
+
+        public Passenger Passenger { get; set; }
+        public int PassengerId { get; set; }
         public string TicketType { get; set; }
     }
 }

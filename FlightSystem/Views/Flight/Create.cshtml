@@ -1,0 +1,82 @@
+﻿@model FlightSystem.Models.Flight
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="/css/flight.css">
+<h4>Flight</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FlightNum" class="control-label">Uçuş numarası</label>
+                <input asp-for="FlightNum" class="form-control" />
+                <span asp-validation-for="FlightNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerCapacity" class="control-label">yolcu kapasitesi</label>
+                <input asp-for="PassengerCapacity" class="form-control" />
+                <span asp-validation-for="PassengerCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDestination" class="control-label">varış yeri</label>
+                <input asp-for="FlightDestination" class="form-control" />
+                <span asp-validation-for="FlightDestination" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDeparture" class="control-label">kalkış yeri</label>
+                <input asp-for="FlightDeparture" class="form-control" />
+                <span asp-validation-for="FlightDeparture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDepartureDate" class="control-label">kalkış tarihi</label>
+                <input asp-for="FlightDepartureDate" class="form-control" />
+                <span asp-validation-for="FlightDepartureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDestinationDate" class="control-label">varış tarihi</label>
+                <input asp-for="FlightDestinationDate" class="form-control" />
+                <span asp-validation-for="FlightDestinationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDestinationTime" class="control-label">varış saati</label>
+                <input asp-for="FlightDestinationTime" class="form-control" />
+                <span asp-validation-for="FlightDestinationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDepartureTime" class="control-label">kalkış saati</label>
+                <input asp-for="FlightDepartureTime" class="form-control" />
+                <span asp-validation-for="FlightDepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EconomyClassPrice" class="control-label">ekonomi fiyat</label>
+                <input asp-for="EconomyClassPrice" class="form-control" />
+                <span asp-validation-for="EconomyClassPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessClassPrice" class="control-label">business fiyat</label>
+                <input asp-for="BusinessClassPrice" class="form-control" />
+                <span asp-validation-for="BusinessClassPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="airlineBusiness" class="control-label">havayolu şirketi</label>
+                <input asp-for="airlineBusiness" class="form-control" />
+                <span asp-validation-for="airlineBusiness" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

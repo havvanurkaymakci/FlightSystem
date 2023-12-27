@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FlightSystem.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Flight> Flights { get; set; }
         public DbSet<Passenger> Passengers { get; set; }

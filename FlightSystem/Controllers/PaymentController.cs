@@ -72,7 +72,8 @@ namespace FlightSystem.Controllers
         //    }
         //    return View(payment);
         //}
-      
+        string biletTuru;
+        int toplamTutar;
         public IActionResult Odeme(Passenger pass,Payment payment, Flight flight)
         {
             if(pass.TicketType=="economy")

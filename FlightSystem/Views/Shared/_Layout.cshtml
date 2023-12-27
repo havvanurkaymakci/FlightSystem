@@ -12,17 +12,22 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+
     <link rel="stylesheet" href="/css/ındex.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/css2/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css2/bootstrap.min.css"> 
     <link rel="stylesheet" href="css/css2/fonts">
     <link rel="stylesheet" href="css/css2/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/css2/fontAwesome.css">
-    <link rel="stylesheet" href="css/css2/hero-slider.css">
-    <link rel="stylesheet" href="css/css2/owl-carousel.css">
+     <link rel="stylesheet" href="css/css2/hero-slider.css"> 
+     <link rel="stylesheet" href="css/css2/owl-carousel.css">
     <link rel="stylesheet" href="css/css2/datepicker.css">
-    <link rel="stylesheet" href="css/css2/tooplate-style.css">
+     <link rel="stylesheet" href="css/css2/tooplate-style.css">
     <script src="~/js/common.js"></script>
 
 </head>
@@ -49,6 +54,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Ticket" asp-action="Create">Bilet al</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Flight" asp-action="Create">Uçuş ekle</a>
+                        </li>
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -61,7 +70,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer >
         <div class="container">
             &copy; 2023 - FlightSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

@@ -41,43 +41,39 @@
                             <form id="form-submit" action="" method="get">
                                 <div class="container2">
                                      <div class="row">
-                                        <div class="col-md-2 ">
+                                       <div class="col-md-3 form-group">
                                             <fieldset>                                       
-                                            <label asp-for="FlightDeparture" class="control-label">   Nereden:</label>
-                                            <input asp-for="FlightDeparture" class="form-control" />
-                                            <span asp-validation-for="FlightDeparture" class="text-danger"></span>
-                                        
+                                            <label for="FlightDeparture" class="control-label">   Nereden:</label>
+                                            <input name="FlightDeparture" class="form-control" />                                                                             
                                             </fieldset>
                                         </div>
-                                        <div class="col-md-2 ">
+       
+                                       <div class="col-md-3 form-group">
                                             <fieldset>
-                                            <label asp-for="FlightDestination" class="control-label">   Nereye:</label>
-                                            <input asp-for="FlightDestination" class="form-control" />
-                                            <span asp-validation-for="FlightDestination" class="text-danger"></span>
-                                        </fieldset>
-                                        </div>
-                                        <div class="col-md-2 ">
-                                            <fieldset>
-                                            <label asp-for="FlightDepartureDate" class="control-label"> gidiş tarihi:</label>
-                                            <input asp-for="FlightDepartureDate" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-md-2 ">
-                                            <fieldset>
-                                            <label asp-for="FlightDestinationDate" class="control-label"> dönüş tarihi:</label>
-                                            <input asp-for="FlightDestinationDate" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
-                                            </fieldset>
+                                             <label for="FlightDestination" class="control-label">   Nereye:</label>
+                                             <input name="FlightDestination" class="form-control" />
+                                           </fieldset>
                                         </div>
 
-                                           <div class="col-md-2 form-group">
+                                       <div class="col-md-3">
+                                         <fieldset>
+                                           <label for="departure">Kalkış tarihi:</label>
+                                           <input name="deparure" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
+                                         </fieldset>
+                                        </div>
+                               
+                                    
+                                           <div class="col-md-3 form-group">
                                                 <fieldset>
-                                        <button  type="submit" id="form-submit" class="btn btn-primary">Bilet bul</button>
-                                       
+                                       @*    <a asp-action="Index"> *@
+                                        <button class="aramabutonu" type="submit" id="form-submit" asp-controller="Flight" asp-action="Index">Bilet bul</button>
                                     </fieldset>
                                             </div>
-                                           
-                                                                                                               
-                                   </div>
+
+
+                              
+
+                            </div>
                               </div>                           
                           </form>
                 </div>
@@ -91,13 +87,13 @@
 <div class="container2">
 
     <div class="box">
-        <p class="styled-text ">Bilet iptal</p>
+        <p class="styled-text ">Uçuş Sorgula</p>
     </div>
     <div class="box">
         <p class="styled-text ">check-in</p>
     </div>
     <div class="box">
-        <p class="styled-text ">uçuş sorgula</p>
+        <p class="styled-text ">Bilet iptal</p>
     </div>
 </div>
 

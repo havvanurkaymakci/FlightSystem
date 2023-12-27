@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-
+<link rel="stylesheet" href="/css/passenger.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
 <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -88,17 +88,19 @@
             </div>
             <hr />
 
-            <div class="form-group" asp-action="ReceiveData">
+
+            <div class="form-group">
                 <label>uçuş türü seçiniz</label>
                 <br />
                 <label>
-                    <input type="radio" asp-for="TicketType" name="TicketType" value="economy"> Ekonomi
+                    <input type="radio" asp-for="TicketType" name="TicketType" value="0"> Ekonomi
                 </label>
                 <label>
-                    <input type="radio" asp-for="TicketType" name="TicketType" value="bussiness"> Business
+                    <input type="radio" asp-for="TicketType" name="TicketType" value="1"> Business
                 </label>
                 <span asp-validation-for="TicketType" class="text-danger"></span>
             </div>
+
             <br />
 
             <div class="form-group">
@@ -118,6 +120,15 @@
 </div>
 
 <br />
+@* @* <div class="col-md-4 ">
+    <div class="image-container">
+        <img src="img/travel1.jpg" alt="Resim 1">
+        <img src="img/travel2.jpg" alt="Resim 2">
+        <img src="img/travel3.jpg" alt="Resim 3">
+    </div>
+
+</div>
+ *@ 
 
 <br />
 <div class="bosluk"></div>

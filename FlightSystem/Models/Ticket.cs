@@ -6,10 +6,12 @@ namespace FlightSystem.Models
     {
 
         [Key]
-        public int TicketId { get; set; }
-        public int PassengerId { get; set; }
+        public int TicketId { get; set; }     
         public int FlightID { get; set; }
         public int TicketNum { get; set; } //Alinan bilet sayisi
+
+        public Passenger Passenger { get; set; }
+        public int PassengerId { get; set; }
         public string TicketType{ get; set; }
         
     }
