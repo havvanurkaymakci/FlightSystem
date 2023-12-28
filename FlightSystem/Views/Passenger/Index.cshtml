@@ -4,18 +4,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h3>Yolcu bilgilerini giriniz</h3>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
+    <tbody>
     <thead>
-        <tr>
+         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TicketNum)
+                    @Html.DisplayNameFor(model => model.TicketNum)
             </th>
-            <th>
+           
+            <th> 
                 @Html.DisplayNameFor(model => model.PassengerName)
             </th>
             <th>
@@ -39,15 +39,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.UserPhone)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.TicketType)
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketNum)
-            </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.TicketNum)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PassengerName)
             </td>
@@ -72,6 +74,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserPhone)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketType)
+            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PassengerId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.PassengerId">Details</a> |

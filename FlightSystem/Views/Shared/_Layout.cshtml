@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - FlightSystem</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FlightSystem.styles.css" asp-append-version="true" />
 
@@ -19,16 +20,21 @@
 
     <link rel="stylesheet" href="/css/ındex.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/flight.css">
+
+    <script src="~/js/common.js"></script>
+
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/css2/bootstrap.min.css"> 
-    <link rel="stylesheet" href="css/css2/fonts">
+
+     <link rel="stylesheet" href="css/css2/bootstrap.min.css">
+    @* <link rel="stylesheet" href="css/css2/fonts">
     <link rel="stylesheet" href="css/css2/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/css2/fontAwesome.css">
      <link rel="stylesheet" href="css/css2/hero-slider.css"> 
      <link rel="stylesheet" href="css/css2/owl-carousel.css">
     <link rel="stylesheet" href="css/css2/datepicker.css">
      <link rel="stylesheet" href="css/css2/tooplate-style.css">
-    <script src="~/js/common.js"></script>
+    *@
 
 </head>
 <body>
@@ -45,9 +51,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Passenger" asp-action="Create">Yolcu</a>
                         </li>
@@ -73,7 +77,7 @@
     <footer >
         <div class="container">
             &copy; 2023 - FlightSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+        </div> 
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

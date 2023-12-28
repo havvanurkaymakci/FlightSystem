@@ -1,0 +1,65 @@
+﻿@model List<FlightSystem.Models.Flight>
+
+<h2>Uçuş Sonuçları</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nereden</th>
+                <th>Nereye</th>
+                <th>Kalkış Tarihi</th>
+                <th>Varış Tarihi</th>
+                <th>Kalkış saati</th>
+                <th>Varış saati</th>
+                <th>Ekonomi Fiyatı</th>
+                <th>Business Fiyatı</th>
+                <th>Havayolu şirketi</th>
+                <th>Satın al</th>
+               
+                <!-- Diğer kolonlar -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in Model)
+            {
+                <tr>
+                    <td>@flight.FlightDeparture</td>
+                    <td>@flight.FlightDestination</td>
+                    <td>@flight.FlightDepartureDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@flight.FlightDestinationDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@flight.FlightDepartureTime</td>
+                    <td>@flight.FlightDestinationTime</td>
+                    <td>@flight.EconomyClassPrice</td>
+                    <td>@flight.BusinessClassPrice</td>
+                    <td>@flight.airlineBusiness</td>
+                    <td>
+                        <a href="@Url.Action("Create", "Passenger", new { id = flight.FlightId })">
+                            <button class="btn btn-primary">Bilet Al</button>
+                        </a>
+                    </td>
+                    <!-- Diğer kolonlar -->
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Tüm bilgileri gösterme bölümü -->
+    @* <h3>Tüm Bilgiler</h3>
+    <div>
+        @foreach (var flight in Model)
+        {
+            <p>Uçuş Numarası: @flight.FlightNum</p>
+            <p>Nereden: @flight.FlightDeparture</p>
+            <p>Nereye: @flight.FlightDestination</p>
+            <p>Kalkış Tarihi: @flight.FlightDepartureDate.ToString("dd/MM/yyyy HH:mm")</p>
+            <p>havayolu şirketi: @flight.airlineBusiness ></p>
+            <!-- Diğer bilgiler -->
+        }
+    </div> *@
+}
+else
+{
+    <p>Uçuş bulunamadı.</p>
+}

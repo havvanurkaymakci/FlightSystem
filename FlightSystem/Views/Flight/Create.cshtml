@@ -4,10 +4,12 @@
     ViewData["Title"] = "Create";
 }
 <link rel="stylesheet" href="/css/flight.css">
-<h4>Flight</h4>
-<hr />
+
+
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 offset-2">
+        <h4>Uçuş ekle</h4>
+        <hr />
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -40,15 +42,16 @@
                 <input asp-for="FlightDestinationDate" class="form-control" />
                 <span asp-validation-for="FlightDestinationDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FlightDestinationTime" class="control-label">varış saati</label>
-                <input asp-for="FlightDestinationTime" class="form-control" />
-                <span asp-validation-for="FlightDestinationTime" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="FlightDepartureTime" class="control-label">kalkış saati</label>
                 <input asp-for="FlightDepartureTime" class="form-control" />
                 <span asp-validation-for="FlightDepartureTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDestinationTime" class="control-label">varış saati</label>
+                <input asp-for="FlightDestinationTime" class="form-control" />
+                <span asp-validation-for="FlightDestinationTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EconomyClassPrice" class="control-label">ekonomi fiyat</label>
@@ -65,17 +68,24 @@
                 <input asp-for="airlineBusiness" class="form-control" />
                 <span asp-validation-for="airlineBusiness" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="submit" value="Kaydet" class="btn btn-success w-100 h-25" />
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <a asp-action="Index" class="btn btn-sm btn-secondary w-100 h-100" >Uçuşları görüntüle</a>
+                </div>
             </div>
+           
         </form>
     </div>
 </div>
 
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

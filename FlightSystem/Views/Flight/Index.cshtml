@@ -4,11 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Uçuşlar</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h2>Mevcut Uçuşlar</h2>
+<hr />
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -17,12 +18,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PassengerCapacity)
+            </th>         
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDeparture)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FlightDestination)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightDeparture)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FlightDepartureDate)
@@ -30,11 +31,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.FlightDestinationDate)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FlightDestinationTime)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.FlightDepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDestinationTime)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EconomyClassPrice)
@@ -45,7 +47,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.airlineBusiness)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="Create" class="btn btn-sm btn-primary">
+                    <i class="fa-solid fa-plus" ></i> Yeni oluştur
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -56,25 +62,26 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PassengerCapacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightDestination)
-            </td>
+            </td>           
             <td>
                 @Html.DisplayFor(modelItem => item.FlightDeparture)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightDestination)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FlightDepartureDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FlightDestinationDate)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightDestinationTime)
-            </td>
-            <td>
+             <td>
                 @Html.DisplayFor(modelItem => item.FlightDepartureTime)
-            </td>
+             </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.FlightDestinationTime)
+             </td>
+          
             <td>
                 @Html.DisplayFor(modelItem => item.EconomyClassPrice)
             </td>
@@ -85,11 +92,18 @@
                 @Html.DisplayFor(modelItem => item.airlineBusiness)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.FlightId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.FlightId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.FlightId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.FlightId" class="btn btn-sm btn-success">
+                        <i class="fa-solid fa-pen-to-square"></i> Düzenle
+                    </a> 
+                
+                    <a asp-action="Delete" asp-route-id="@item.FlightId" class="btn btn-sm btn-warning">
+                        <i class="fa-solid fa-trash"></i> Sil
+                    </a> 
+                    <a asp-action="Details" asp-route-id="@item.FlightId" class="btn btn-sm btn-info"> Görüntüle</a>
+              
             </td>
         </tr>
 }
     </tbody>
 </table>
+

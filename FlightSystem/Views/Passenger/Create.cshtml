@@ -16,11 +16,11 @@
     <div class="col-md-4 " >
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-          @*   <div class="form-group">
+            <div class="form-group">
                 <label asp-for="TicketNum" class="control-label"></label>
                 <input asp-for="TicketNum" class="form-control" />
                 <span asp-validation-for="TicketNum" class="text-danger"></span>
-            </div> *@
+            </div> 
                      
             <div class="form-group">
                 <label asp-for="PassengerName" class="control-label">Yolcu adı:</label>
@@ -32,7 +32,14 @@
                 <input asp-for="PassengerSurname" class="form-control" />
                 <span asp-validation-for="PassengerSurname" class="text-danger"></span>
             </div>
-          
+
+            <div class="form-group">
+                <label asp-for="Birthday" class="control-label">Doğum tarihi:</label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+            </div>
+
+
             <div class="form-group">
                 <label>
                     <input type="radio" asp-for="passengerGender" name="passengerGender" value="erkek"> Erkek
@@ -45,12 +52,7 @@
             <br />
             
 
-            <div class="form-group">
-                <label asp-for="Birthday" class="control-label">Doğum tarihi:</label>
-                <input asp-for="Birthday" class="form-control" />
-                <span asp-validation-for="Birthday" class="text-danger"></span>
-            </div>
-
+           
             <label>
                 <input type="radio" name="nationality" value="turkish" onchange="nationalityChanged()"> Türk Vatandaşı
             </label>
@@ -90,48 +92,38 @@
 
 
             <div class="form-group">
-                <label>uçuş türü seçiniz</label>
+                <label for="TicketType">Uçuş türü seçiniz:</label>
                 <br />
-                <label>
-                    <input type="radio" asp-for="TicketType" name="TicketType" value="0"> Ekonomi
-                </label>
-                <label>
-                    <input type="radio" asp-for="TicketType" name="TicketType" value="1"> Business
-                </label>
-                <span asp-validation-for="TicketType" class="text-danger"></span>
+                <select name="TicketType" id="classSelection" required>
+                    <option value="Economy">Ekonomi Class</option>
+                    <option value="Business">Business Class</option>
+                </select>
             </div>
+           
 
             <br />
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="yolcuyu kaydet" class="btn btn-primary" />
                
-                <a class="btn btn-warning" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Anasayfa</a>
             </div>
             <br />
             <div>
-                <a class="btn btn-info" asp-controller="Payment" asp-action="Create">Ödeme işlemine geç</a>
+                <a asp-controller="Payment" asp-action="Create" class="btn btn-info">Ödeme işlemine geç</a>
             </div>
-            
+
+            <div class="col-md-6">
+                <a asp-action="Index" class="btn btn-sm btn-secondary w-100 h-100">yolcu listesi</a>
+            </div>
         </form>
+
+
+   
        
     </div>
     <h5 style="color:blue;">@TempData["onayMesaji"]</h5>
 </div>
-
-<br />
-@* @* <div class="col-md-4 ">
-    <div class="image-container">
-        <img src="img/travel1.jpg" alt="Resim 1">
-        <img src="img/travel2.jpg" alt="Resim 2">
-        <img src="img/travel3.jpg" alt="Resim 3">
-    </div>
-
-</div>
- *@ 
-
-<br />
-<div class="bosluk"></div>
 
 <script>
     function nationalityChanged() {
@@ -150,5 +142,34 @@
 </script>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+
+
+@* @* <div class="col-md-4 ">
+    <div class="image-container">
+        <img src="img/travel1.jpg" alt="Resim 1">
+        <img src="img/travel2.jpg" alt="Resim 2">
+        <img src="img/travel3.jpg" alt="Resim 3">
+    </div>
+
+</div>
+
+   @*   <div class="row mt-2">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="submit" value="Kaydet" class="btn btn-success w-100 h-25" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <a asp-action="Index" class="btn btn-sm btn-secondary w-100 h-100">Uçuşları görüntüle</a>
+            </div>
+        </div> *@
+ 
+<br />
+<div class="bosluk"></div>
+
