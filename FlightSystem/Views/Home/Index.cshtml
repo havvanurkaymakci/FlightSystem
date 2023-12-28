@@ -38,40 +38,36 @@
                   <div classs="flightform">
                           <h4> Uçak bileti ara</h4>
                     <hr />
-                            <form id="form-submit" action="" method="get">
+                    <form id="form-submit" action="@Url.Action("UcusSorgusu", "Home")" , method="get">
                                 <div class="container2">
                                      <div class="row">
                                        <div class="col-md-3 form-group">
                                             <fieldset>                                       
-                                            <label for="FlightDeparture" class="control-label">   Nereden:</label>
-                                            <input name="FlightDeparture" class="form-control" />                                                                             
+                                            <label for="Departure" class="control-label">   Nereden:</label>
+                                            <input name="Departure" id="Departure" class="form-control" />                                                                             
                                             </fieldset>
                                         </div>
        
                                        <div class="col-md-3 form-group">
                                             <fieldset>
-                                             <label for="FlightDestination" class="control-label">   Nereye:</label>
-                                             <input name="FlightDestination" class="form-control" />
+                                             <label for="Destination" class="control-label">   Nereye:</label>
+                                             <input name="Destination" class="form-control" />
                                            </fieldset>
                                         </div>
 
                                        <div class="col-md-3">
                                          <fieldset>
-                                           <label for="departure">Kalkış tarihi:</label>
-                                           <input name="deparure" type="text" class="form-control date" id="deparure" placeholder="Select date..." required="" onchange='this.form.()'>
+                                           <label for="departuredate">Kalkış tarihi:</label>
+                                           <input name="departuredate" type="text" class="form-control date" id="deparuredate" placeholder="Select date..." required="" onchange='this.form.()'>
                                          </fieldset>
                                         </div>
-                               
-                                    
+                                                              
                                            <div class="col-md-3 form-group">
                                                 <fieldset>
                                        @*    <a asp-action="Index"> *@
-                                        <button class="aramabutonu" type="submit" id="form-submit" asp-controller="Flight" asp-action="Index">Bilet bul</button>
+                                        <button class="aramabutonu" type="submit" id="form-submit" >Bilet bul</button>
                                     </fieldset>
-                                            </div>
-
-
-                              
+                                            </div>                           
 
                             </div>
                               </div>                           

@@ -48,7 +48,7 @@ namespace FlightSystem.Controllers
         // GET: Flight/Create
         public IActionResult Create()
         {
-            return View();
+            return View(new Flight());
         }
 
         // POST: Flight/Create
