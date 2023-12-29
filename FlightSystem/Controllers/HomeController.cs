@@ -60,5 +60,7 @@ namespace FlightSystem.Controllers
 
             return View("Sonuc",sonuc1);
         }
+
+       
     }
 }

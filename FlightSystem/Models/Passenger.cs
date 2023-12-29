@@ -34,10 +34,10 @@ namespace FlightSystem.Models
         [Required(ErrorMessage = " Kimlik numarası alanı zorunludur.")]
         public string TCNumber { get; set; }
 
-        [Display(Name = "Pasaport numarası")]
-        [Required(ErrorMessage = "Passport Numarası alanı zorunludur.")]
-        [RegularExpression(@"^[A-PR-WY][1-9]\d\s?\d{3}[1-9]$", ErrorMessage = "Geçersiz pasaport numarası.")]
-        public string PassportNum { get; set; }
+        //[Display(Name = "Pasaport numarası")]
+        //[Required(ErrorMessage = "Passport Numarası alanı zorunludur.")]
+        //[RegularExpression(@"^[A-PR-WY][1-9]\d\s?\d{3}[1-9]$", ErrorMessage = "Geçersiz pasaport numarası.")]
+        //public string PassportNum { get; set; }
 
         [Display(Name = "Mail adresi")]
         [EmailAddress(ErrorMessage = "Lütfen geçerli bir mail giriniz")]

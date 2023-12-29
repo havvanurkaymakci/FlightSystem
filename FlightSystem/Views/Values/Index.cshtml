@@ -1,0 +1,73 @@
+﻿@* @model List<FlightSystem.Models.Flight>  *@
+
+@* <!DOCTYPE html>
+<html>
+<head>
+    <title>Uçuş Listesi</title>
+</head>
+<body>
+
+    <h1>Uçuş Listesi</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <!-- Diğer sütun başlıkları -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in Model)
+            {
+                <tr>
+                    <td>@flight.FlightId</td>
+                    <!-- Diğer sütun değerleri -->
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html> *@
+ 
+@page
+@model FlightSystem.Models.Flight
+
+<!-- HTML içeriği buraya gelebilir -->
+
+<form id="flight-form">
+    <label for="flightId">Flight ID:</label>
+    <input type="text" id="flightId" name="flightId" required>
+    <button type="button" onclick="getFlightInfo()">Get Flight Info</button>
+</form>
+
+<div id="flight-info"></div>
+
+@section scripts {
+    <script>
+        function getFlightInfo() {
+            var flightId = document.getElementById("flightId").value;
+
+            // API'den verileri almak için bir XMLHttpRequest nesnesi oluşturun
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/api/Values/" + flightId, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        // JSON verilerini parse edin
+                        var flight = JSON.parse(xhr.responseText);
+
+                        // HTML içine verileri yerleştirin
+                        var flightInfoDiv = document.getElementById("flight-info");
+                        flightInfoDiv.innerHTML = "<strong>Flight ID:</strong> " + flight.flightId + ", <strong>Origin:</strong> " + flight.origin + ", <strong>Destination:</strong> " + flight.destination;
+                    } else if (xhr.status == 404) {
+                        // Belirtilen ID ile uçuş bulunamadı
+                        var flightInfoDiv = document.getElementById("flight-info");
+                        flightInfoDiv.innerHTML = "Flight not found.";
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+}
